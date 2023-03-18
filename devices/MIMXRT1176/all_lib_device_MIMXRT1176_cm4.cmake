@@ -5,6 +5,8 @@ list(APPEND CMAKE_MODULE_PATH
     ${CMAKE_CURRENT_LIST_DIR}/../../CMSIS/Driver/Include
     ${CMAKE_CURRENT_LIST_DIR}/../../boards/evkmimxrt1170/xip
     ${CMAKE_CURRENT_LIST_DIR}/../../boards/evkmimxrt1170/xmcd
+    ${CMAKE_CURRENT_LIST_DIR}/../../boards/phytec_pcm073/xip
+    ${CMAKE_CURRENT_LIST_DIR}/../../boards/phytec_pcm073/xmcd
     ${CMAKE_CURRENT_LIST_DIR}/../../cmsis_drivers/enet
     ${CMAKE_CURRENT_LIST_DIR}/../../cmsis_drivers/lpi2c
     ${CMAKE_CURRENT_LIST_DIR}/../../cmsis_drivers/lpspi
@@ -142,6 +144,7 @@ list(APPEND CMAKE_MODULE_PATH
 #    include(CMSIS_Driver_Include_Ethernet_MAC)
 #    include(middleware_sdmmc_sd)
 #    include(driver_xip_board_evkmimxrt1170)
+#    include(driver_xip_board_phytec_pcm073)
 #    include(middleware_lwip_contrib_tcpecho)
 #    include(driver_snvs_lp)
 #    include(driver_dc-fb-common)
@@ -187,6 +190,7 @@ list(APPEND CMAKE_MODULE_PATH
 #    include(middleware_wifi_common_files)
 #    include(middleware_lwip_contrib_ping)
 #    include(driver_xmcd_evkmimxrt1170)
+#    include(driver_xmcd_phytec_pcm073)
 #    include(component_lpuart_adapter)
 #    include(driver_lpi2c_edma)
 #    include(middleware_sdmmc_osa_freertos)

@@ -5,6 +5,8 @@ list(APPEND CMAKE_MODULE_PATH
     ${CMAKE_CURRENT_LIST_DIR}/../../CMSIS/Driver/Include
     ${CMAKE_CURRENT_LIST_DIR}/../../boards/evkmimxrt1170/xip
     ${CMAKE_CURRENT_LIST_DIR}/../../boards/evkmimxrt1170/xmcd
+    ${CMAKE_CURRENT_LIST_DIR}/../../boards/phytec_pcm073/xip
+    ${CMAKE_CURRENT_LIST_DIR}/../../boards/phytec_pcm073/xmcd
     ${CMAKE_CURRENT_LIST_DIR}/../../cmsis_drivers/enet
     ${CMAKE_CURRENT_LIST_DIR}/../../cmsis_drivers/lpi2c
     ${CMAKE_CURRENT_LIST_DIR}/../../cmsis_drivers/lpspi
@@ -171,6 +173,7 @@ list(APPEND CMAKE_MODULE_PATH
 #    include(driver_cmsis_lpuart)
 #    include(middleware_azure_rtos_nxd)
 #    include(driver_xip_board_evkmimxrt1170)
+#    include(driver_xip_board_phytec_pcm073)
 #    include(middleware_azure_rtos_nxd_template_MIMXRT1176_cm7)
 #    include(driver_snvs_lp)
 #    include(middleware_maestro_framework)
@@ -234,6 +237,7 @@ list(APPEND CMAKE_MODULE_PATH
 #    include(device_startup_MIMXRT1176_cm7)
 #    include(middleware_lwip_contrib_ping)
 #    include(driver_xmcd_evkmimxrt1170)
+#    include(driver_xmcd_phytec_pcm073)
 #    include(component_lpuart_adapter)
 #    include(middleware_edgefast_wifi_nxp)
 #    include(middleware_usb_host_ehci_MIMXRT1176_cm7)
