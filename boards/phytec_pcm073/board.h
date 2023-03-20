@@ -76,6 +76,18 @@
 #ifndef BOARD_USER_LED_GPIO_PIN
 #define BOARD_USER_LED_GPIO_PIN (3U)
 #endif
+#ifndef BOARD_USER_LED1_GPIO
+#define BOARD_USER_LED1_GPIO GPIO9
+#endif
+#ifndef BOARD_USER_LED1_GPIO_PIN
+#define BOARD_USER_LED1_GPIO_PIN (13U)
+#endif
+#ifndef BOARD_USER_LED2_GPIO
+#define BOARD_USER_LED2_GPIO GPIO12
+#endif
+#ifndef BOARD_USER_LED2_GPIO_PIN
+#define BOARD_USER_LED2_GPIO_PIN (13U)
+#endif
 
 #define USER_LED_INIT(output)                                            \
     GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, output); \
