@@ -111,6 +111,13 @@ status_t HAL_CODEC_Init(void *handle, void *config)
             retVal = HAL_CODEC_TFA9896_Init(handle, config);
             break;
 #endif
+
+#ifdef CODEC_TLV320AIC3110_ENABLE
+		case kCODEC_TLV320AIC3110:
+			retVal = HAL_CODEC_TLV320AIC3110_Init(handle, config);
+			break;
+#endif
+
         default:
             retVal = kStatus_InvalidArgument;
             break;
@@ -197,6 +204,13 @@ status_t HAL_CODEC_Deinit(void *handle)
             retVal = HAL_CODEC_TFA9XXX_Deinit(handle);
             break;
 #endif
+
+#ifdef CODEC_TLV320AIC3110_ENABLE
+		case kCODEC_TLV320AIC3110:
+			retVal = HAL_CODEC_TLV320AIC3110(handle);
+			break;
+#endif
+
         default:
             retVal = kStatus_InvalidArgument;
             break;
@@ -286,6 +300,13 @@ status_t HAL_CODEC_SetFormat(void *handle, uint32_t mclk, uint32_t sampleRate, u
             retVal = HAL_CODEC_TFA9XXX_SetFormat(handle, mclk, sampleRate, bitWidth);
             break;
 #endif
+
+#ifdef CODEC_TLV320AIC3110
+		case kCODEC_TLV320AIC3110:
+			retVal = HAL_CODEC_TLV320AIC3110_SetFormat(handle, mclk, sampleRate, bitWidth);
+			break;
+#endif
+
         default:
             retVal = kStatus_InvalidArgument;
             break;
@@ -374,6 +395,13 @@ status_t HAL_CODEC_SetVolume(void *handle, uint32_t playChannel, uint32_t volume
             retVal = HAL_CODEC_TFA9XXX_SetVolume(handle, playChannel, volume);
             break;
 #endif
+
+#ifdef CODEC_TLV320AIC3110
+		case kCODEC_TLV320AIC3110:
+			retVal = HAL_CODEC_TLV320AIC3110_SetVolume(handle, playChannel, volumen);
+			break;
+#endif
+
         default:
             retVal = kStatus_InvalidArgument;
             break;
@@ -462,6 +490,13 @@ status_t HAL_CODEC_SetMute(void *handle, uint32_t playChannel, bool isMute)
             retVal = HAL_CODEC_TFA9XXX_SetMute(handle, playChannel, isMute);
             break;
 #endif
+
+#ifdef CODEC_TLV320AIC3110
+        case kCODEC_TFA9XXX:
+            retVal = HAL_CODEC_TLV320AIC3110_SetMute(handle, playChannel, isMute);
+            break;
+#endif
+
         default:
             retVal = kStatus_InvalidArgument;
             break;
@@ -550,6 +585,13 @@ status_t HAL_CODEC_SetPower(void *handle, uint32_t module, bool powerOn)
             retVal = HAL_CODEC_TFA9XXX_SetPower(handle, module, powerOn);
             break;
 #endif
+
+#ifdef CODEC_TLV320AIC3110_ENABLE
+        case kCODEC_TLV320AIC3110:
+            retVal = HAL_CODEC_TLV320AIC3110_SetPower(handle, module, powerOn);
+            break;
+#endif
+
         default:
             retVal = kStatus_InvalidArgument;
             break;
@@ -638,6 +680,13 @@ status_t HAL_CODEC_SetRecord(void *handle, uint32_t recordSource)
             retVal = HAL_CODEC_TFA9XXX_SetRecord(handle, recordSource);
             break;
 #endif
+
+#ifdef CODEC_TLV320AIC3110_ENABLE
+        case kCODEC_TLV320AIC3110:
+            retVal = HAL_CODEC_TLV320AIC3110_SetRecord(handle, recordSource);
+            break;
+#endif
+
         default:
             retVal = kStatus_InvalidArgument;
             break;
@@ -729,6 +778,13 @@ status_t HAL_CODEC_SetRecordChannel(void *handle, uint32_t leftRecordChannel, ui
             retVal = HAL_CODEC_TFA9XXX_SetRecordChannel(handle, leftRecordChannel, rightRecordChannel);
             break;
 #endif
+
+#ifdef CODEC_TLV320AIC3110_ENABLE
+        case kCODEC_TLV320AIC3110:
+            retVal = HAL_CODEC_TLV320AIC3110_SetRecordChannel(handle, leftRecordChannel, rightRecordChannel);
+            break;
+#endif
+
         default:
             retVal = kStatus_InvalidArgument;
             break;
@@ -817,6 +873,13 @@ status_t HAL_CODEC_SetPlay(void *handle, uint32_t playSource)
             retVal = HAL_CODEC_TFA9XXX_SetPlay(handle, playSource);
             break;
 #endif
+
+#ifdef CODEC_TLV320AIC3110_ENABLE
+        case kCODEC_TLV320AIC3110:
+            retVal = HAL_CODEC_TLV320AIC3110_SetPlay(handle, playSource);
+            break;
+#endif
+
         default:
             retVal = kStatus_InvalidArgument;
             break;
@@ -902,6 +965,12 @@ status_t HAL_CODEC_ModuleControl(void *handle, uint32_t cmd, uint32_t data)
 #ifdef CODEC_AK4458_ENABLE
         case kCODEC_AK4458:
             retVal = HAL_CODEC_AK4458_ModuleControl(handle, cmd, data);
+            break;
+#endif
+
+#ifdef CODEC_TLV320AIC3110_ENABLE
+        case kCODEC_TLV320AIC3110:
+            retVal = HAL_CODEC_TLV320AIC3110_ModuleControl(handle, cmd, data);
             break;
 #endif
 

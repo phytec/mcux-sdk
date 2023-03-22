@@ -2143,7 +2143,7 @@ ${load}</script>
         <all>
           <component_dependency value="driver.codec.MIMXRT1176"/>
           <any_of>
-            <component_dependency value="component.wm8960_adapter.MIMXRT1176"/>
+            <component_dependency value="component.tlv320aic3110_adapter.MIMXRT1176"/>
             <component_dependency value="component.cs42888_adapter.MIMXRT1176"/>
             <component_dependency value="component.da7212_adapter.MIMXRT1176"/>
             <component_dependency value="component.sgtl_adapter.MIMXRT1176"/>
@@ -3106,6 +3106,33 @@ ${load}</script>
       </source>
       <include_paths>
         <include_path relative_path="./port/wm8960" type="c_include"/>
+        <include_path relative_path="./port/" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="component.tlv320aic3110_adapter.MIMXRT1176" name="codec_tlv320aic3110_adapter" brief="Component tlv320aic3110 adapter for single codecs" version="2.2.0" full_name="Component tlv320aic3110_adapter" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="abstraction_layer" package_base_path="../components/codec/" project_base_path="codec">
+      <dependencies>
+        <all>
+          <component_dependency value="driver.tlv320aic3110.MIMXRT1176"/>
+          <component_dependency value="driver.codec.MIMXRT1176"/>
+        </all>
+      </dependencies>
+      <source relative_path="port/tlv320aic3110" type="src">
+        <files mask="fsl_codec_tlv320aic3110_adapter.c"/>
+      </source>
+      <source relative_path="port/tlv320aic3110" type="c_include">
+        <files mask="fsl_codec_tlv320aic3110_adapter.h"/>
+      </source>
+      <source relative_path="port" type="c_include">
+        <files mask="fsl_codec_adapter.h"/>
+      </source>
+      <source toolchain="armgcc" relative_path="." type="workspace" device_cores="cm4_MIMXRT1176xxxxx">
+        <files mask="component_tlv320aic3110_adapter_MIMXRT1176_cm4.cmake" hidden="true"/>
+      </source>
+      <source toolchain="armgcc" relative_path="." type="workspace" device_cores="cm7_MIMXRT1176xxxxx">
+        <files mask="component_tlv320aic3110_adapter_MIMXRT1176_cm7.cmake" hidden="true"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./port/tlv320aic3110" type="c_include"/>
         <include_path relative_path="./port/" type="c_include"/>
       </include_paths>
     </component>
@@ -4613,7 +4640,7 @@ ${load}</script>
         <all>
           <component_dependency value="platform.drivers.common.MIMXRT1176"/>
           <any_of>
-            <component_dependency value="component.wm8960_adapter.MIMXRT1176"/>
+            <component_dependency value="component.tlv320aic3110_adapter.MIMXRT1176"/>
             <component_dependency value="component.codec_adapters.MIMXRT1176"/>
             <component_dependency value="component.cs42888_adapter.MIMXRT1176"/>
             <component_dependency value="component.da7212_adapter.MIMXRT1176"/>
@@ -6846,6 +6873,29 @@ ${load}</script>
       </source>
       <source toolchain="armgcc" relative_path="." type="workspace" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="driver_wm8960_MIMXRT1176_cm7.cmake" hidden="true"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="driver.tlv320aic3110.MIMXRT1176" name="tlv320aic3110" brief="Driver tlv320aic3110" version="2.2.1" full_name="Driver tlv320aic3110" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="software_component" package_base_path="../components/codec/tlv320aic3110" project_base_path="codec">
+      <dependencies>
+        <all>
+          <component_dependency value="platform.drivers.common.MIMXRT1176"/>
+          <component_dependency value="component.codec_i2c.MIMXRT1176"/>
+        </all>
+      </dependencies>
+      <source relative_path="./" type="c_include">
+        <files mask="fsl_tlv320aic3110.h"/>
+      </source>
+      <source relative_path="./" type="src">
+        <files mask="fsl_tlv320aic3110.c"/>
+      </source>
+      <source toolchain="armgcc" relative_path="." type="workspace" device_cores="cm4_MIMXRT1176xxxxx">
+        <files mask="driver_tlv320aic3110_MIMXRT1176_cm4.cmake" hidden="true"/>
+      </source>
+      <source toolchain="armgcc" relative_path="." type="workspace" device_cores="cm7_MIMXRT1176xxxxx">
+        <files mask="driver_tlv320aic3110_MIMXRT1176_cm7.cmake" hidden="true"/>
       </source>
       <include_paths>
         <include_path relative_path="./" type="c_include"/>
