@@ -1,5 +1,6 @@
 /*
- * Copyright 2022 NXP
+ * Copyright (C) 2023 PHYTEC America, LLC - https://www.phytec.com
+ * Author: John Ma <jma@phytec.com>
  * All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
