@@ -12,8 +12,6 @@
 # https://docs.zephyrproject.org/latest/guides/west/index.html
 manifest:
   remotes:
-  - name: phytec
-    url-base: https://github.com/phytec
   - name: nxpmicro
     url-base: https://github.com/NXPmicro
   - name: nxp
@@ -25,10 +23,6 @@ manifest:
   defaults:
     remote: nxpmicro
   projects:
-  - name: mcux-sdk-phytec-examples-dev
-    revision: v2.13.0-phynext
-    path: phytec_examples
-    remote: phytec
   - name: mcux-sdk-examples
     revision: MCUX_2.13.0
     path: examples
