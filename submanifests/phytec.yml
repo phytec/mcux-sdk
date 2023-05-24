@@ -1,0 +1,12 @@
+manifest:
+  defaults:
+    remote: phytec
+    revision: v2.13.0-phy
+
+  remotes:
+    - name: phytec
+      url-base: https://github.com/phytec
+
+  projects:
+    - name: mcux-sdk-phytec-examples
+      path: examples-phytec
