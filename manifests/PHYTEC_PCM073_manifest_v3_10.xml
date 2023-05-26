@@ -44,7 +44,7 @@
     <manifest_include path="../../rtos/azure-rtos/manifests/middleware_microsoft_azure_rtos_tx_MIMXRT1176_manifest_v3_10.xml"/>
     <manifest_include path="../../rtos/azure-rtos/manifests/middleware_microsoft_azure_rtos_ux_MIMXRT1176_manifest_v3_10.xml"/>
     <manifest_include path="../../middleware/issdk/manifests/middleware_nxp_iot_sensing_sdk_MIMXRT1176_manifest_v3_10.xml"/>
-    <manifest_include path="../../phytec_examples/phytec_pcm073/phytec_pcm073_example_manifest_v3_10.xml"/>
+    <manifest_include path="../../examples-phytec/phytec_pcm073/phytec_pcm073_example_manifest_v3_10.xml"/>
   </manifest_includes>
   <compilers>
     <compiler id="compiler_gcc" name="gcc" type="gcc"/>
