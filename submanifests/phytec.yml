@@ -1,7 +1,7 @@
 manifest:
   defaults:
     remote: phytec
-    revision: v2.13.0-phy
+    revision: v2.13.0-phy1
 
   remotes:
     - name: phytec
