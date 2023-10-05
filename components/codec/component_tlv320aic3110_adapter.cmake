@@ -12,7 +12,7 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
 )
 
 
-include(driver_tlv320aic3110_MIMXRT1176_cm7)
+include(driver_tlv320aic3110)
 
-include(driver_codec_MIMXRT1176_cm7)
+include(driver_codec)
 

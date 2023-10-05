@@ -11,7 +11,7 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
 )
 
 
-include(driver_common_MIMXRT1176_cm4)
+include(driver_common)
 
-include(component_codec_i2c_MIMXRT1176_cm4)
+include(component_codec_i2c_${MCUX_DEVICE})
 
