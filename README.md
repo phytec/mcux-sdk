@@ -19,37 +19,39 @@ In this way we want to benefit user from below aspects:
 2. Provide flexibility for user to select needed projects to build their application.
 3. Provide ability for user to fetch needed project version to build their application.
 
-To satisfy the expectation we leveraged [Zephyr west tool](https://docs.zephyrproject.org/latest/guides/west/index.html) which helps do multi-repository management and allow user to self create ```west.yml``` to select needed projects for downstream use. 
+To satisfy the expectation we leveraged [Zephyr west tool](https://docs.zephyrproject.org/latest/guides/west/index.html) which helps do multi-repository management and allow user to self create ```west.yml``` to select needed projects for downstream use.
 
 ## Overview
 This project provides the fundamental support for all NXP hot parts:
 
 * Arm® CMSIS-CORE startup and device header files and CMSIS-DSP standard libraries
 * Open-source peripheral drivers that provide stateless, high-performance, easy-to-use APIs
-* Drivers for communication peripherals also include high-level transactional APIs for high-performance data transfers 
+* Drivers for communication peripherals also include high-level transactional APIs for high-performance data transfers
 * High-quality software: all drivers and startup code are MISRA-C: 2012 compliant and checked with Coverity® static analysis tools
 
 **The project can work solely**, if you only want to get the fundamental support for SoC(s) or board(s), you just use the original Git way to clone and checkout the project.
 
-**The project is also the main repository to achieve the whole SDK delivery**, it contains the [west.yml](https://github.com/NXPmicro/mcux-sdk/blob/main/west.yml) which keeps description and revision for other projects in the overall MCUXpresso delivery. Currently available middleware sets are shown in below figure, user could click the middleware to navigate the middleware project repo.
+**The project is also the main repository to achieve the whole SDK delivery**, it contains the [west.yml](https://github.com/phytec/mcux-sdk/blob/v2.13.0/west.yml) which keeps description and revision for other projects in the overall MCUXpresso delivery. Currently available middleware sets are shown in below figure, user could click the middleware to navigate the middleware project repo.
 [![MCUXSDK Graph](docs/sdk_graph.svg)](https://htmlpreview.github.io/?https://github.com/NXPmicro/mcux-sdk/blob/main/docs/sdk_graph.html)
-You need to have both Git and West installed, then execute below commands to achieve the whole SDK delivery at revision ```${revision}``` and place it in a folder named ```mcuxsdk```. 
+
+## Setup
+You need to have both Git and West installed, then execute below commands to achieve the whole SDK delivery at revision ```${revision}``` and place it in a folder named ```mcuxsdk```.
 ```
-west init -m https://github.com/NXPmicro/mcux-sdk --mr ${revision} mcuxsdk
+west init -m https://github.com/phytec/mcux-sdk --mr ${revision} mcuxsdk
 cd mcuxsdk
 west update
 ```
-Replace ```${revision}``` with any SDK revision you wish to achieve. This can be ```main``` if you want the latest state, or any commit SHA. 
+Replace ```${revision}``` with any SDK revision you wish to achieve. This can be the version branches (i.e. v2.13.0) or any commit SHA.
 
 ## Releases
 
 There are two types of release in the project. The MCUXpresso SDK release and GitHub Main SDK release. Below description uses **MCUX release** short for MCUXpresso SDK release, use **Main release** short for GitHub Main SDK release.
 
 ### MCUX Release
-The MCUX release launches once a new release is available on [SDK Builder](http://mcuxpresso.nxp.com/). Users previously using [SDK Builder](http://mcuxpresso.nxp.com/) could easily find the exact same code base MCUX release with same 2.x.y version of SDK archive package, software examples build/run quality are guaranteed in the release. **MCUX releases will be prefixed with 'MCUX_'**, and every release will be merged into main branch to ensure main branch has all released boards/socs support. 
+The MCUX release launches once a new release is available on [SDK Builder](http://mcuxpresso.nxp.com/). Users previously using [SDK Builder](http://mcuxpresso.nxp.com/) could easily find the exact same code base MCUX release with same 2.x.y version of SDK archive package, software examples build/run quality are guaranteed in the release. **MCUX releases will be prefixed with 'MCUX_'**, and every release will be merged into main branch to ensure main branch has all released boards/socs support.
 
 The "MCUX_" releases are categorized into mainline releases and NPI release.
-* For mainline releases, usually it's planned twice a year to do a global feature update for NXP hot parts. The x in 2.x.y version increments each time a mainline release goes out. 
+* For mainline releases, usually it's planned twice a year to do a global feature update for NXP hot parts. The x in 2.x.y version increments each time a mainline release goes out.
 * For NPI release, it aims to support a new soc product recently launched in the market. It is built with verified features in previous mainline release. The release name is suffixed with NPI name to identify it's an NPI release.
 
 Each MCUX release is made on previous mainline release tag/NPI release tag, thus user could easily check the difference between two releases using ````git diff```` command.
